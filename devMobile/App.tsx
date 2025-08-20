@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Flexbox from './Flexbox';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Meu projeto em React Native na matéria de Desenvolvimento Mobile na Fatec Votorantim</Text>
+      <Text style={ {fontWeight: 600, fontSize: 35}}>Meu projeto em React Native na matéria de Desenvolvimento Mobile na Fatec Votorantim</Text>
       <Text style={styles.redText}>Aluno: </Text>
       <Image
         source={{ uri: "https://avatars.githubusercontent.com/u/115610413?v=4" }}
@@ -21,6 +22,11 @@ export default function App() {
         <Text style={styles.TeslaText}>
           X
         </Text>
+      </View>
+      <View style={{flex: 1, backgroundColor: '#222', width: 200}}>
+        <View style={{flex: 1, backgroundColor: 'red'}}>.</View>
+        <View style={{flex: 1, backgroundColor: 'blue'}}>.</View>
+        <View style={{flex: 2, backgroundColor: 'green'}}>.</View>
       </View>
     </View>
   );
