@@ -15,7 +15,12 @@ export default function App() {
         <Text style={styles.LinkedinText}>
           Linkedin
         </Text>
-        <Text
+        <Text style={styles.FacebookText}>
+          Facebook
+        </Text>
+        <Text style={styles.TeslaText}>
+          X
+        </Text>
       </View>
     </View>
   );
@@ -36,10 +41,21 @@ const styles = StyleSheet.create({
   },
   socialMedia: {
     flexDirection: 'row',
+    gap: 10
   },
   LinkedinText: {
     fontFamily: 'Roboto',
     color: 'blue',
     fontSize: 18
+  },
+  FacebookText: {
+    fontFamily: 'Arial',
+    fontSize: 20,
+    color: 'yellow'
+  },
+  TeslaText: {
+    fontFamily: 'Times New Roman',
+    fontSize: 35,
+    color: 'black'
   }
 });
