@@ -11,6 +11,12 @@ export default function App() {
         style={{ width: 200, height: 200, borderRadius: 50, margin: 15 }}
       />
       <Text style={styles.redText}>Douglas Wenzel</Text>
+      <View style={styles.socialMedia}>
+        <Text style={styles.LinkedinText}>
+          Linkedin
+        </Text>
+        <Text
+      </View>
     </View>
   );
 }
@@ -18,13 +24,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#878721',
+    backgroundColor: '#5f9fe8',
     alignItems: 'center',
     justifyContent: 'center',
   },
   redText: {
-    color: 'red',
+    color: '#ff085a',
     fontSize: 25,
-    margin: 15
+    margin: 15,
+    fontWeight: 'bold'
+  },
+  socialMedia: {
+    flexDirection: 'row',
+  },
+  LinkedinText: {
+    fontFamily: 'Roboto',
+    color: 'blue',
+    fontSize: 18
   }
 });
