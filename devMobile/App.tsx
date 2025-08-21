@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import Flexbox from './Flexbox';
+import AulaTres from './aulaTres';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <AulaTres />
       <Text style={ {fontWeight: 600, fontSize: 35}}>Meu projeto em React Native na matéria de Desenvolvimento Mobile na Fatec Votorantim</Text>
       <Text style={styles.redText}>Aluno: </Text>
       <Image
@@ -23,10 +24,10 @@ export default function App() {
           X
         </Text>
       </View>
-      <View style={{flex: 1, backgroundColor: '#222', width: 200}}>
-        <View style={{flex: 1, backgroundColor: 'red'}}>.</View>
-        <View style={{flex: 1, backgroundColor: 'blue'}}>.</View>
-        <View style={{flex: 2, backgroundColor: 'green'}}>.</View>
+      <View style={{flex: 1, gap: 8, flexDirection: 'row', justifyContent: 'flex-start'}}>
+        <View style={{width: 50, height:50, flex: 1, backgroundColor: 'red'}}>.</View>
+        <View style={{width: 50, height:50, flex: 1, backgroundColor: 'blue'}}>.</View>
+        <View style={{width: 50, height:50, flex: 4, backgroundColor: 'green', justifyContent: 'space-around'}}>.</View>
       </View>
     </View>
   );
