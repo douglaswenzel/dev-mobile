@@ -13,6 +13,16 @@ class aulaTres extends Component<AppProps, AppState> {
     this.state = {
       nome: 'Dodo'
     }
+
+    this.pegaNome = this.pegaNome.bind(this);
+  }
+
+  pegaNome(texto: string) {
+    if(texto.length > 0 ) {
+        this.setState({nome: texto});
+    } else{
+        this.setState({nome: ''})
+    }
   }
 
   render() {
@@ -21,7 +31,7 @@ class aulaTres extends Component<AppProps, AppState> {
         <TextInput 
           style={styles.input}
           value={this.state.nome}
-          onChangeText={(text) => this.setState({nome: text})}
+          onChangeText={this.pegaNome}
         />
         <Text style={styles.texto}>Oiii, {this.state.nome}!</Text>
       </View>
