@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 
 interface AulaQuatroState {
     nome: string;
+    input: string;
 }
 
 class aulaQuatro extends Component<any, AulaQuatroState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            nome: ''
+            nome: '',
+            input: ''
         };
 
-        this.pegaNome = this.pegaNome.bind(this);
+        this.entrar = this.entrar.bind(this);
     }
 
-    pegaNome(texto: string) {
-        if(texto.length > 0){
-            this.setState({ nome: 'Bem vindo ' + texto })
-        } else {
-            this.setState({ nome: ''})
+    entrar() {
+        if(this.state.input === ''){
+            alert('Digite seu nome');
+            return;
         }
+      this.setState({ nome: 'Bem vindo: ' + this.state.input})
     }
 
     render(){
@@ -30,8 +32,10 @@ class aulaQuatro extends Component<any, AulaQuatroState> {
                 style={styles.input}
                 placeholder='Digite seu nome'
                 underlineColorAndroid="transparent"
-                onChangeText={this.pegaNome}
-                />
+                onChangeText={ (texto) => this.setState({input: texto})}
+                />  
+
+                <Button title='Entrar' onPress={this.entrar} />
 
                 <Text style={styles.texto}>{this.state.nome}</Text>
             </View>
