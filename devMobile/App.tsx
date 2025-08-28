@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import AulaTres from './aulaTres';
+import AulaQuatro from './aulaQuatro';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <AulaTres />
+      <AulaQuatro />
       <Text style={ {fontWeight: 600, fontSize: 35}}>Meu projeto em React Native na matéria de Desenvolvimento Mobile na Fatec Votorantim</Text>
       <Text style={styles.redText}>Aluno: </Text>
       <Image
