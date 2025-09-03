@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, StatusBar } from 'react-native';
 import Pessoas from './src/Pessoas/Pessoas';
 
 type Pessoa = {
@@ -24,13 +24,23 @@ class App extends Component<{}, AppState>{
       ]
     };
   }
+  
   render(){
     return(
       <View style={styles.container}>
+        <StatusBar backgroundColor="#2c3e50" barStyle="light-content" />
+        
+        <View style={styles.header}>
+          <Text style={styles.headerTitle}>👥 Controle de Acesso</Text>
+          <Text style={styles.headerSubtitle}>Pessoas no local</Text>
+        </View>
+
         <FlatList 
-         data={this.state.lista}
-         keyExtractor={(item) => item.id}
-         renderItem={({ item }) => <Pessoas data={item} /> }
+          data={this.state.lista}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <Pessoas data={item} />}
+          contentContainerStyle={styles.listContent}
+          showsVerticalScrollIndicator={false}
         />
       </View>
     );
@@ -40,34 +50,40 @@ class App extends Component<{}, AppState>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 28,
-
+    backgroundColor: '#ecf0f1',
   },
-  redText: {
-    color: '#ff085a',
-    fontSize: 25,
-    margin: 15,
-    fontWeight: 'bold'
+  header: {
+    backgroundColor: '#2c3e50',
+    padding: 25,
+    paddingTop: 10,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
+    elevation: 8,
   },
-  socialMedia: {
-    flexDirection: 'row',
-    gap: 10
+  headerTitle: {
+    color: 'white',
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 5,
   },
-  LinkedinText: {
-    fontFamily: 'Roboto',
-    color: 'blue',
-    fontSize: 18
+  headerSubtitle: {
+    color: '#bdc3c7',
+    fontSize: 16,
+    textAlign: 'center',
+    fontWeight: '500',
   },
-  FacebookText: {
-    fontFamily: 'Arial',
-    fontSize: 20,
-    color: 'yellow'
+  listContent: {
+    padding: 20,
+    paddingBottom: 40,
   },
-  TeslaText: {
-    fontFamily: 'Times New Roman',
-    fontSize: 35,
-    color: 'black'
-  }
 });
 
 export default App;
