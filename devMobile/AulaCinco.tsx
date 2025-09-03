@@ -13,7 +13,7 @@ type AppState = {
     pizzas: Pizza[];
 };
 
-export default class App extends Component<{}, AppState> {
+export default class AulaCinco extends Component<{}, AppState> {
 
     constructor(props: any) {
         super(props);
@@ -50,6 +50,7 @@ export default class App extends Component<{}, AppState> {
                 </Picker>
 
                 <Text>você escolheu: {this.state.pizzas[this.state.pizza].nome}</Text>
+                <Text>Valor: R$ {this.state.pizzas[this.state.pizza].valor}</Text>
             </View>
         );
     }
