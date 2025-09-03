@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import Pessoas from './src/Pessoas/Pessoas.js';
 import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import Pessoas from './src/Pessoas/Pessoas';
 
 type Pessoa = {
   id: string;
@@ -69,3 +68,5 @@ const styles = StyleSheet.create({
     color: 'black'
   }
 });
+
+export default App;
