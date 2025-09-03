@@ -19,7 +19,8 @@ class App extends Component<{}, AppState>{
     this.state = {
       lista: [
         {id: '1', nome: 'Matheus', idade: 50, email: 'matheus@matheus.com'},
-        {id: '2', nome: 'Dougla Wenzel', idade: 23, email: 'contato@douglaswenzel.com.br'}
+        {id: '2', nome: 'Dougla Wenzel', idade: 23, email: 'contato@douglaswenzel.com.br'},
+        {id: '3', nome: 'Piero Gavanski', idade: 33, email: 'rh@piagamotors.com.br'}
       ]
     };
   }
