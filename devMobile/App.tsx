@@ -1,21 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Biscoito from './biscoito';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import Pessoas from './src/Pessoas/Pessoas.js';
+import React, { Component } from 'react';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Biscoito />
-    </View>
-  );
+type Pessoa = {
+  id: string;
+  nome: string;
+  idade: number;
+  email: string;
+};
+
+type AppState = {
+  lista: Pessoa[];
+};
+
+class App extends Component<{}, AppState>{
+  constructor(props: any){
+    super(props);
+    this.state = {
+      lista: [
+        {id: '1', nome: 'Matheus', idade: 50, email: 'matheus@matheus.com'},
+        {id: '2', nome: 'Dougla Wenzel', idade: 23, email: 'contato@douglaswenzel.com.br'}
+      ]
+    };
+  }
+  render(){
+    return(
+      <View style={styles.container}>
+        <FlatList 
+         data={this.state.lista}
+         keyExtractor={(item) => item.id}
+         renderItem={({ item }) => <Pessoas data={item} /> }
+        />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 28,
+
   },
   redText: {
     color: '#ff085a',
