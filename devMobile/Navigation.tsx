@@ -24,9 +24,9 @@ const Navigation = () => {
       case 'AulaQuatroDois':
         return <AulaQuatroDois />;
       case 'AulaCinco':
-        return <AulaCinco />;
+        return <AulaCincoDois  />;
       case 'AulaCincoDois':
-        return <AulaCincoDois />;
+        return <AulaCinco />;
       default:
         return <AulaUm />;
     }
@@ -45,7 +45,7 @@ const Navigation = () => {
           onPress={() => setCurrentScreen('AulaUm')}
         >
           <Text style={[styles.navText, currentScreen === 'AulaUm' && styles.activeText]}>
-            👥 Aula 1
+            🌎 Aula 1
           </Text>
         </TouchableOpacity>
         
@@ -90,7 +90,7 @@ const Navigation = () => {
           onPress={() => setCurrentScreen('AulaCinco')}
         >
           <Text style={[styles.navText, currentScreen === 'AulaCinco' && styles.activeText]}>
-            🍕 Aula 5
+            💂‍♂️ Aula 5
           </Text>
         </TouchableOpacity>
                 <TouchableOpacity 
