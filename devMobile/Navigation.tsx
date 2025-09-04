@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
-import App from './App';
 import AulaUm from './aulaUm';
 import AulaDois from './aulaDois';
 import AulaTres from './aulaTres';
 import AulaQuatro from './aulaQuatro';
+import AulaQuatroDois from './aulaQuatroDois';
 import AulaCinco from './AulaCinco';
 import AulaCincoDois from './AulaCinco-dois';
 
@@ -21,6 +21,8 @@ const Navigation = () => {
         return <AulaTres />;
       case 'AulaQuatro':
         return <AulaQuatro />;
+      case 'AulaQuatroDois':
+        return <AulaQuatroDois />;
       case 'AulaCinco':
         return <AulaCinco />;
       case 'AulaCincoDois':
@@ -71,6 +73,15 @@ const Navigation = () => {
         >
           <Text style={[styles.navText, currentScreen === 'AulaQuatro' && styles.activeText]}>
             🔄 Aula 4
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={[styles.navButton, currentScreen === 'AulaQuatroDois' && styles.activeButton]}
+          onPress={() => setCurrentScreen('AulaQuatroDois')}
+        >
+          <Text style={[styles.navText, currentScreen === 'AulaQuatroDois' && styles.activeText]}>
+            🥠 Aula 4.2
           </Text>
         </TouchableOpacity>
         
