@@ -7,6 +7,7 @@ import AulaQuatro from './aulaQuatro';
 import AulaQuatroDois from './aulaQuatroDois';
 import AulaCinco from './AulaCinco';
 import AulaCincoDois from './AulaCinco-dois';
+import AulaCincoTres from './AulaCincoTres';
 
 const Navigation = () => {
   const [currentScreen, setCurrentScreen] = useState('App');
@@ -27,6 +28,8 @@ const Navigation = () => {
         return <AulaCincoDois  />;
       case 'AulaCincoDois':
         return <AulaCinco />;
+      case 'AulaCincoTres':
+        return <AulaCincoTres />;
       default:
         return <AulaUm />;
     }
@@ -101,6 +104,16 @@ const Navigation = () => {
             🍕 Aula 5.2
           </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={[styles.navButton, currentScreen === 'AulaCincoTres' && styles.activeButton]}
+          onPress={() => setCurrentScreen('AulaCincoTres')}
+        >
+          <Text style={[styles.navText, currentScreen === 'AulaCincoTres' && styles.activeText]}>
+            🔈 Aula 5.3
+          </Text>
+        </TouchableOpacity>
+
       </ScrollView>
       <View style={styles.content}>
         {renderScreen()}
