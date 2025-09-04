@@ -6,7 +6,7 @@ type BiscoitoState = {
   img: any;
 };
 
-export class Biscoito extends Component<any, BiscoitoState>{
+export class aulaQuatroDois extends Component<any, BiscoitoState>{
   frases: string[];
   constructor(props: any){
     super(props);
@@ -56,33 +56,73 @@ export class Biscoito extends Component<any, BiscoitoState>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#FFF5E6',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
   },
   img: {
-    width: 250,
-    height: 250
+    width: 280,
+    height: 280,
+    resizeMode: 'contain',
+    marginBottom: 30,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 8,
   },
   textoFrase: {
-    fontSize: 20,
-    color: '#DD7B22',
+    fontSize: 22,
+    color: '#E67E22',
     margin: 30,
     fontStyle: 'italic',
     textAlign: 'center',
+    fontWeight: '500',
+    lineHeight: 32,
+    backgroundColor: '#FFF9F0',
+    padding: 20,
+    borderRadius: 15,
+    borderLeftWidth: 5,
+    borderLeftColor: '#E67E22',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   botao: {
-    width: 230,
-    height: 50,
+    width: 250,
+    height: 60,
+    backgroundColor: '#E67E22',
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 8,
     borderWidth: 2,
-    borderColor: '#dd7b22',
-    borderRadius: 25
+    borderColor: '#D35400',
   },
   btnArea: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-  }
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+  },
 });
 
-export default Biscoito;
+export default aulaQuatroDois;
