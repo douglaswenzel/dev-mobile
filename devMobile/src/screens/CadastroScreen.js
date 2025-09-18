@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignItems: 'center',
-    fontSize: 50,
+    fontSize: 30,
     fontWeight: 700,
     justifyContent: 'center'
   },
