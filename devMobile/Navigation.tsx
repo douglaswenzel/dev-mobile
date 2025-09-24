@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity, Text, SafeAreaView, StatusBar } from 'react-native';
 import AulaUm from './aulaUm';
 import AulaDois from './aulaDois';
 import AulaTres from './aulaTres';
@@ -10,6 +10,7 @@ import AulaCincoDois from './AulaCinco-dois';
 import AulaCincoTres from './AulaCincoTres';
 import AulaCincoQuatro from './AulaCincoQuatro';
 import AulaSete from './aulaSete';
+import Cesta from './src/screens/Cesta';
 
 const Navigation = () => {
   const [currentScreen, setCurrentScreen] = useState('App');
@@ -36,6 +37,13 @@ const Navigation = () => {
         return <AulaCincoQuatro />;
       case 'AulaSete':
         return <AulaSete />;
+      case 'AulaOito':
+        return (
+          <SafeAreaView>
+            <StatusBar />
+            <Cesta />
+          </SafeAreaView>
+        );
       default:
         return <AulaUm />;
     }
@@ -134,6 +142,14 @@ const Navigation = () => {
         >
           <Text style={[styles.navText, currentScreen === 'AulaSete' && styles.activeText]}>
             🧿 Aula 7.0
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.navButton, currentScreen === 'AulaOito' && styles.activeButton]}
+          onPress={() => setCurrentScreen('AulaOito')}
+        >
+          <Text style={[styles.navText, currentScreen === 'AulaOito' && styles.activeText]}>
+            🥬 Aula 8.0
           </Text>
         </TouchableOpacity>
       </ScrollView>
